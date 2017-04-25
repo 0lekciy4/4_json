@@ -6,13 +6,13 @@ def load_data(filepath):
         data = json.load(handle)
     return data
 
-def pretty_print_json(data):
-    return json.dumps(data, sort_keys=True, ensure_ascii=False, indent=4)
+def pretty_print_json(json_content):
+    return json.dumps(json_content, sort_keys=True, ensure_ascii=False, indent=4)
 
 if __name__ == '__main__':
     try:
-        data = load_data(sys.argv[1])
-        print(pretty_print_json(data))
+        json_content = load_data(sys.argv[1])
+        print(pretty_print_json(json_content))
     except IndexError:
         print('File path not passed')
     except FileNotFoundError:
