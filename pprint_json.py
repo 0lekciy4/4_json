@@ -6,7 +6,7 @@ def load_data(filepath):
         json_data = json.load(json_file)
     return json_data
 
-def return_pretty_json(json_content):
+def prettify_json(json_content):
     return json.dumps(json_content, sort_keys=True, ensure_ascii=False, indent=4)
 
 if __name__ == '__main__':
@@ -18,4 +18,4 @@ if __name__ == '__main__':
         print('File not found')
     except json.JSONDecodeError as err:
         print('Bad json: {}'.format(err))
-    print(return_pretty_json(json_content))
+    print(prettify_json(json_content))
